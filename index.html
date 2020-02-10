@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>Cinema Booking</title>
+
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/stripe.css">
+  <link rel="icon" type="image/png" href="img/movie-film-2-120-317376.png">
+</head>
+
+<body>
+  <div class="content">
+    <label class="title" for="">Scegli il Film</label>
+    <select name="" id="film">
+      <option value="12">1984 <span class="price"> € 12.00</span></option>
+      <option value="11">Matrix <span class="price"> € 11.00</span></option>
+      <option value="13">After The Rain <span class="price"> € 13.00</span></option>
+      <option value="14">Il Corvo <span class="price"> € 14.00</span></option>
+      <option value="16">Essi Vivono <span class="price"> € 16.00</span></option>
+      <option value="22">Free solo <span class="price"> € 22.00</span></option>
+      <option value="33">Idiocracy <span class="price"> € 33.00</span></option>
+      <option value="10">Public enemy <span class="price"> € 10.00</span></option>
+      <option value="12">Jason Bourne <span class="price"> € 12.00</span></option>
+      <option value="9">La verità negata <span class="price"> € 9.00</span></option>
+      <option value="18">Point Break <span class="price"> € 18.00</span></option>
+      <option value="12">The Net <span class="price"> € 12.00</span></option>
+      <option value="13">Braveheart <span class="price"> € 13.00</span></option>
+      <option value="16">The Trumanhow <span class="price"> € 16.00</span></option>
+      <option value="17">Oblivion <span class="price"> € 17.00</span></option>
+      <option value="19">Transcendence <span class="price"> € 19.00</span></option>
+      <option value="12">The Listening <span class="price"> € 12.00</span></option>
+      <option value="20">V <span class="price"> € 20.00</span></option>
+    </select>
+  </div>
+
+
+  <div class="cinemaInfo">
+    <div class="seat info"></div>
+    <small>Free</small>
+
+
+    <div class="seat info selezionata"></div>
+    <small>Selezionato</small>
+
+
+    <div class="seat info occupata"></div>
+    <small>Occupato</small>
+  </div>
+
+  <div class="theatre">
+    <div class="screenArea"><span> Big Brother is watching you</span></div>
+    <div class="theatreRows">
+      <div class="row" id="1">
+        <div class="rowNumb" id="1"></div>
+        <div class="sedia" id="1"></div>
+        <div class="sedia" id="2"></div>
+        <div class="sedia" id="3"></div>
+        <div class="seatwheelChair" id="4"><img class="wheelChair" src="img/icons8-wheelchair-52.png" alt=""></div>
+        <div class="seatwheelChair" id="4"><img class="wheelChair" src="img/icons8-wheelchair-52.png" alt=""></div>
+        <div class="sedia" id="6"></div>
+        <div class="sedia" id="7"></div>
+        <div class="sedia" id="8"></div>
+        <div class="sedia occupata" id="9"></div>
+        <div class="sedia" id="10"></div>
+      </div>
+      <div class="row" id="2">
+        <div class="rowNumb" id="2"></div>
+        <div class="sedia" id="1"></div>
+        <div class="sedia" id="2"></div>
+        <div class="sedia" id="3"></div>
+        <div class="sedia" id="4"></div>
+        <div class="sedia occupata" id="5"></div>
+        <div class="sedia" id="6"></div>
+        <div class="sedia" id="7"></div>
+        <div class="sedia" id="8"></div>
+        <div class="sedia" id="9"></div>
+        <div class="sedia" id="10"></div>
+      </div>
+      <div class="row" id="3">
+        <div class="rowNumb" id="3"></div>
+        <div class="sedia" id="1"></div>
+        <div class="sedia" id="2"></div>
+        <div class="sedia" id="3"></div>
+        <div class="sedia" id="4"></div>
+        <div class="sedia" id="5"></div>
+        <div class="sedia" id="6"></div>
+        <div class="sedia" id="7"></div>
+        <div class="sedia" id="8"></div>
+        <div class="sedia" id="9"></div>
+        <div class="sedia" id="10"></div>
+      </div>
+      <div class="row" id="4">
+        <div class="rowNumb" id="4"></div>
+        <div class="sedia" id="1"></div>
+        <div class="sedia" id="2"></div>
+        <div class="sedia" id="3"></div>
+        <div class="sedia" id="4"></div>
+        <div class="sedia" id="5"></div>
+        <div class="sedia" id="6"></div>
+        <div class="sedia" id="7"></div>
+        <div class="sedia" id="8"></div>
+        <div class="sedia" id="9"></div>
+        <div class="sedia" id="10"></div>
+      </div>
+      <div class="row" id="5">
+        <div class="rowNumb" id="5"></div>
+        <div class="sedia" id="1"></div>
+        <div class="sedia" id="2"></div>
+        <div class="sedia" id="3"></div>
+        <div class="sedia" id="4"></div>
+        <div class="sedia" id="5"></div>
+        <div class="sedia" id="6"></div>
+        <div class="sedia" id="7"></div>
+        <div class="sedia" id="8"></div>
+        <div class="sedia" id="9"></div>
+        <div class="sedia" id="10"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout">
+    <div class="checkOutAreaOne">
+      <span> Posto (S/F):</span>
+      <div class="postoS"></div>
+      <br>
+      <div class="checkoutTotal">
+        <span> Poltrone: </span> <span class="sedieTotale"> 0 </span>
+        <span> Totale € : </span> <span class="costo"> 0 </span>
+      </div>
+
+      <br>
+    </div>
+
+    <div class="checkOutAreaTwo">
+      <!-- BACKEND ROUTE -->
+      <form action="https://YOURSITE.COM/CREDITCARDCHECKOUT" method="POST">
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_YOURSTRIPEKEY"
+          data-amount="0" data-name="test" data-description="Sito Web Veloce"
+          data-image="img/movie-film-2-120-317376.png" data-locale="auto" data-currency="eur">
+        </script>
+        <script>
+          // Hide default stripe button
+          document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+        </script>
+
+
+        <button type="submit" class="btnAcquista">Acquista</button>
+
+      </form>
+
+
+    </div>
+  </div>
+
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

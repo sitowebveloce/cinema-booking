@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css?family=Sigmar+One&display=swap");
+
+:root {
+  --back-color: rgba(0, 0, 0, 0.9);
+  --main-color: rgb(246, 4, 53);
+  --main-seat: rgb(149, 4, 245);
+  --main-selected: rgb(243, 119, 73);
+  --main-occupata: rgb(246, 4, 53);
+}
+
+* {
+  font-family: "Sigmar One", cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: auto;
+  background: var(--back-color);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.6rem;
+}
+
+.cinemaInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.content select {
+  padding: 0 1rem;
+  --moz--appearance: none;
+  --webkit--appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 3px;
+
+  outline: none;
+}
+
+select#film {
+  font-size: 1.4rem;
+  margin: 0.6rem 0;
+}
+
+.content select option {
+  font-size: 1.1rem;
+  padding: 0 1rem;
+}
+
+label.title {
+  font-size: 2.9rem;
+  color: var(--main-color);
+}
+
+.seat.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: sans-serif;
+  color: #ffffff;
+
+  background: var(--main-seat);
+  height: 1.2rem;
+  width: 1.2rem;
+  margin: 0.4rem 0.2rem;
+  border-top-left-radius: 0.2em;
+  border-top-right-radius: 0.2em;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.sedia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: sans-serif;
+  color: #ffffff;
+
+  background: var(--main-seat);
+  height: 1.4rem;
+  width: 1.4rem;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  cursor: pointer;
+  perspective: 100px;
+  transition: all 0.5s linear;
+}
+
+.sedia:not(.occupata):hover {
+  background: rgb(90, 4, 248);
+  transform: scale(1.1);
+}
+
+.seat.info:hover {
+  cursor: default;
+  transform: scale(1.1);
+}
+
+.sedia.selezionata {
+  background: var(--main-selected);
+}
+
+.sedia.occupata {
+  background: var(--main-occupata);
+  cursor: default;
+}
+
+.seat.info.occupata {
+  background: var(--main-occupata);
+  cursor: default;
+}
+
+.seat.info.selezionata {
+  background: var(--main-selected);
+  cursor: default;
+}
+
+.sedia:nth-of-type(2) {
+  margin-right: 1rem;
+}
+
+.sedia:nth-last-of-type(2) {
+  margin-left: 1rem;
+}
+
+.screenArea {
+  background: #ffffff;
+  height: 100px;
+  width: 100%;
+  margin: 0.8rem 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.8);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  text-align: center;
+}
+
+.screenArea span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.theatre {
+  margin-top: 0.4rem;
+  perspective: 200px;
+}
+
+div.row {
+  display: flex;
+  position: relative;
+}
+
+div.theatreRows {
+  margin-top: 2rem;
+}
+
+.rowNumb {
+  font-family: sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.1;
+  color: #ffffff;
+
+  position: absolute;
+  left: -50px;
+  top: 5px;
+  transition: 0.5s linear;
+}
+
+.rowNumb:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.checkout {
+  margin: 0.6rem 0;
+  color: rgba(231, 226, 226, 1);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "areaTwo areaOne";
+  grid-gap: 0.6rem;
+}
+
+.checkout span.costo {
+  color: rgb(4, 136, 26);
+}
+
+.costo {
+  display: inline-block;
+  min-width: 20px;
+
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-top: 0.1rem;
+}
+
+.sedieTotale {
+  display: inline-block;
+  min-width: 20px;
+
+  background: rgba(0, 0, 0, 0.3);
+
+  text-align: center;
+}
+
+.postoS {
+  min-height: 40px;
+  max-width: 150px;
+  margin-top: 0.2rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--main-color);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.btnAcquista {
+  border: none;
+  outline: none;
+  width: 130px;
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.5s linear;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.btnAcquista:hover {
+  color: #ffffff;
+  background: var(--main-color);
+}
+
+.checkOutAreaOne {
+  grid-area: areaOne;
+}
+
+.checkOutAreaTwo {
+  grid-area: areaTwo;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkoutTotal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.wheelChair {
+  width: 1.2rem;
+  color: var(--main-color);
+  /* padding: 0 0.2rem; */
+  margin: 0.2rem 0.3rem;
+  text-align: center;
+}
+
+/* MEDIA QUERY  */
+@media only screen and (max-width: 768px) {
+  .btnAcquista {
+    font-size: 1rem;
+    padding: 0.2rem;
+  }
+
+  .screenArea {
+    background: #f8f6d8;
+    height: 80px;
+    width: 100%;
+    margin: 0.2rem auto;
+    transform: rotateX(-45deg);
+    box-shadow: 1px 5px 20px #f8f5cd;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+    text-align: center;
+  }
+
+  .screenArea span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.2);
+  }
+}
