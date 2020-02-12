@@ -11,7 +11,7 @@ const acquista = document.querySelector(".btnAcquista");
 // Select film selector
 let film = document.getElementById("film");
 // Select sedie
-const sedie = document.querySelectorAll(".sedia:not(.occupata");
+const sedie = document.querySelectorAll(".sedia:not(.occupata)");
 // Global Variables
 let removeSeat = false;
 let seatRow = 0;
